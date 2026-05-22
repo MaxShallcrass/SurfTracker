@@ -1,0 +1,7 @@
+{
+  "name": "SurfTracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

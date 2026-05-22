@@ -1,0 +1,27 @@
+:root {
+  --bg-base:          #0A1628;
+  --bg-surface:       #0F1F35;
+  --bg-elevated:      #162840;
+  --bg-subtle:        #0C1C2E;
+  --text-primary:     #E8F4FF;
+  --text-secondary:   #8AAEC8;
+  --text-muted:       #4A7FA8;
+  --text-faint:       #2D5578;
+  --accent-primary:   #5BB3F0;
+  --border-default:   #1A3050;
+  --border-subtle:    #112238;
+  --state-error:      #E84855;
+  --state-success:    #2DD4A0;
+
+  --ion-background-color:        var(--bg-base);
+  --ion-card-background:         var(--bg-surface);
+  --ion-toolbar-background:      var(--bg-surface);
+  --ion-tab-bar-background:      var(--bg-surface);
+  --ion-color-primary:           var(--accent-primary);
+  --ion-color-danger:            var(--state-error);
+  --ion-color-success:           var(--state-success);
+  --ion-text-color:              var(--text-primary);
+  --ion-border-color:            var(--border-default);
+  --ion-item-background:         var(--bg-surface);
+  --ion-overlay-background-color: var(--bg-elevated);
+}
