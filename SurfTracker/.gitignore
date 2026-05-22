@@ -11,8 +11,17 @@
 # production
 /dist
 
+# Capacitor
+www/
+.capacitor/
+
+# Cypress test artifacts
+cypress/screenshots/
+cypress/videos/
+
 # misc
 .DS_Store
+Thumbs.db
 .env.local
 .env.development.local
 .env.test.local

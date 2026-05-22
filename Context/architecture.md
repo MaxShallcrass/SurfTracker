@@ -10,13 +10,14 @@
 | Database  | SQL Server  | Relational metadata for storing user's, sessions, surf spots |
 | Infrastructure   | AWS Beanstalk, AWS RDS, Cognito             | Hosting auth, backend server and database
 
+## System boundaries
 
 - `SurfTracker` — Frontend Ionic + React + Capacitor Project
 - - `SurfTracker/src/components` — Houses reusable UI elements like custom buttons or form inputs used across multiple pages
 - - `SurfTracker/src/pages` — Contains top-level components that represent different routes
 - - `SurfTracker/src/services` — Logic for API calls and data fetching.
 - `Database` — Contains database schema
-- `SurfTrackerServer` — .NET Core REST API backend project
+- `SurfTrackerBackend` — .NET Core REST Web API backend project
 - `Infrastructure` — Contain YAML AWS CloudFormation files
 
 ## Storage Model

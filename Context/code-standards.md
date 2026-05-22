@@ -9,7 +9,7 @@
 
 ## TypeScript
 
-- trict mode is required throughout the project
+- Strict mode is required throughout the project
 - Avoid any — use explicit interfaces or narrowly scoped types
 - Validate unknown external input at system boundaries before trusting it
 
@@ -38,11 +38,4 @@
 ## Data and Storage
 
 - Adhere to SQL Server standards
-- 
 
-## File Organization
-
-- `[folder]/` — [What belongs here]
-- `[folder]/` — [What belongs here]
-- `[folder]/` — [What belongs here]
-- `[folder]/` — [What belongs here]s

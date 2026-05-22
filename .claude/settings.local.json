@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(dotnet restore \"C:\\\\Repos\\\\SurfTracker\\\\SurfTrackerBackend\\\\SurfTrackerBackend.csproj\" --force 2>&1)",
+      "Bash(git add *)"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuget.cache
+project.nuget.cache
+
+# Secrets — use dotnet user-secrets or environment variables instead
+appsettings.Local.json
+secrets.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
