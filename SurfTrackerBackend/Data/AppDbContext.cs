@@ -1,14 +1,16 @@
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using SurfTrackerBackend.Models.Domain;
 
 namespace SurfTrackerBackend.Data;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    // DbSets will be added here as domain models are created.
-    // Example: public DbSet<SurfSession> SurfSessions => Set<SurfSession>();
+    public DbSet<User> Users => Set<User>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }

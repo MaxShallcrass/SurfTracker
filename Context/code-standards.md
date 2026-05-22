@@ -39,3 +39,11 @@
 
 - Adhere to SQL Server standards
 
+## Entity Framework Core
+
+- Every entity must have its own configuration class implementing `IEntityTypeConfiguration<T>`
+- Configuration classes live in `SurfTrackerBackend/Data/Configurations/` — one file per entity (e.g. `UserConfiguration.cs`)
+- `AppDbContext` must never contain inline entity configuration — all configuration is picked up automatically via `modelBuilder.ApplyConfigurationsFromAssembly()`
+- `AppDbContext` contains only `DbSet<T>` properties and the single `ApplyConfigurationsFromAssembly` call in `OnModelCreating`
+- Every new database table requires a corresponding SQL schema file in `Database/` before the migration is run
+
