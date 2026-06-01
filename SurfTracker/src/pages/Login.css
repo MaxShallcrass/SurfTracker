@@ -1,0 +1,33 @@
+/* Page wrapper — full-screen background and centred card */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  padding: 24px 16px;
+}
+
+/* Amplify doesn't expose a heading font-family token, so target it directly */
+.login-page [data-amplify-authenticator] h3,
+.login-page [data-amplify-authenticator] h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* borderRadius not exposed on authenticator.router token */
+.login-page [data-amplify-authenticator] [data-amplify-router] {
+  border-radius: 14px;
+}
+
+/* backgroundColor not exposed on fieldcontrol token */
+.login-page [data-amplify-authenticator] input,
+.login-page [data-amplify-authenticator] .amplify-input {
+  background-color: var(--bg-subtle);
+}
+
+/* borderWidth on _focus not exposed as token — enforce 1px accent border */
+.login-page [data-amplify-authenticator] input:focus,
+.login-page [data-amplify-authenticator] .amplify-input:focus {
+  border-width: 1px;
+}

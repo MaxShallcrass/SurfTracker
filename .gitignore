@@ -1,7 +1,16 @@
+# Claude Code
+.claude/settings.local.json
+
+# Backend local config (contains real DB credentials and secrets)
+SurfTrackerBackend/appsettings.Development.json
+
 # Local environment overrides
 .env
 .env.local
 docker-compose.override.yml
+
+# Vite cache
+SurfTracker/.vite/
 
 # OS
 .DS_Store

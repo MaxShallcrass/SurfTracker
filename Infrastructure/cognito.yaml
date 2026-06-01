@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Cognito User Pool for SurfTracker
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+
+  SesFromEmail:
+    Type: String
+    Description: >
+      Verified SES email address used as the sender for verification emails
+      (e.g. noreply@yourdomain.com). Must be verified in SES in the same
+      region as this stack before deploying.
+
+Resources:
+  SurfTrackerUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub surftracker-users-${Environment}
+      UsernameAttributes:
+        - email
+      AutoVerifiedAttributes:
+        - email
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: true
+      Schema:
+        - AttributeDataType: String
+          Name: email
+          Required: true
+          Mutable: true
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Name: verified_email
+            Priority: 1
+      EmailConfiguration:
+        EmailSendingAccount: DEVELOPER
+        From: !Ref SesFromEmail
+        SourceArn: !Sub 'arn:aws:ses:${AWS::Region}:${AWS::AccountId}:identity/${SesFromEmail}'
+
+  SurfTrackerUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub surftracker-app-${Environment}
+      UserPoolId: !Ref SurfTrackerUserPool
+      GenerateSecret: false
+      ExplicitAuthFlows:
+        - ALLOW_USER_SRP_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+      PreventUserExistenceErrors: ENABLED
+
+Outputs:
+  UserPoolId:
+    Value: !Ref SurfTrackerUserPool
+    Export:
+      Name: !Sub surftracker-${Environment}-user-pool-id
+
+  UserPoolArn:
+    Value: !GetAtt SurfTrackerUserPool.Arn
+    Export:
+      Name: !Sub surftracker-${Environment}-user-pool-arn
+
+  AppClientId:
+    Value: !Ref SurfTrackerUserPoolClient
+    Export:
+      Name: !Sub surftracker-${Environment}-app-client-id
