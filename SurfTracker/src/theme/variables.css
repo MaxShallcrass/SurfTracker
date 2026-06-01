@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=DM+Sans:wght@400;500&family=DM+Mono&display=swap');
+
 :root {
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-sans:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', monospace;
   --bg-base:          #0A1628;
   --bg-surface:       #0F1F35;
   --bg-elevated:      #162840;
@@ -8,6 +13,9 @@
   --text-muted:       #4A7FA8;
   --text-faint:       #2D5578;
   --accent-primary:   #5BB3F0;
+  --accent-hover:     #7CC5F5;
+  --accent-active:    #4A9FDE;
+  --accent-focus:     #A8D9FA;
   --border-default:   #1A3050;
   --border-subtle:    #112238;
   --state-error:      #E84855;

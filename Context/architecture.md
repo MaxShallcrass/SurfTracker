@@ -6,7 +6,7 @@
 | --------- | --------------------------- | ------ |
 | Framework backend | .NET Core REST API using| [Role] |
 | UI        | Ionic + React + Capacitor | Component composition and styling |
-| Auth      | AWS Cognito               | User identity and route protection |
+| Auth      | AWS Cognito via AWS Amplify               | User identity and route protection |
 | Database  | SQL Server  | Relational metadata for storing user's, sessions, surf spots |
 | Infrastructure   | AWS Beanstalk, AWS RDS, Cognito             | Hosting auth, backend server and database
 
@@ -32,7 +32,7 @@
 
 ## Auth and Access Model
 
-- Every user signs in via AWS Cognito
+- Every user signs in via AWS Amplify
 - Data stored and cretaed by a user is only visible to the user that created it
 - Another user cannot view the data that another user created
 

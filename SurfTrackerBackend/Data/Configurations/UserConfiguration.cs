@@ -17,10 +17,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         entity.HasIndex(u => u.CognitoId)
             .IsUnique();
 
-        entity.Property(u => u.Email)
-            .IsRequired()
-            .HasMaxLength(256);
-
         entity.Property(u => u.CreatedAt)
             .HasColumnType("datetime2");
 

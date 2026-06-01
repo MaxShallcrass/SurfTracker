@@ -24,6 +24,13 @@
 - Extract the authenticated user's ID from the JWT token — never trust it from the request body
 - Follow clearn architecture practices for file and folder structure
 
+## Frontend React / Ionic
+
+- Use the Ionic documentation found here for information about building with Ionic https://ionicframework.com/docs/react/overviews
+- Never call navigation (`history.replace`, `history.push`) directly in the render body — this is a side effect and will cause a React state transition error. Always wrap navigation in a `useEffect`
+- Render methods must be pure — no side effects (API calls, subscriptions, timers, navigation) directly in the component body. All side effects belong in `useEffect`
+- `IonRouterOutlet` pre-mounts *all* route components on app load (not just the active route) so that it can animate between them. This means `useEffect` guards that call `history.replace` will fire on every page at startup, not just when that page is active. Use `useIonViewDidEnter` instead — it only fires when the user actually navigates to that page
+
 ## Styling
 
 - Use CSS custom property tokens — no hardcoded hex values

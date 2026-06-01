@@ -10,6 +10,10 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  // amazon-cognito-identity-js references `global` — remap to window for browser builds
+  define: {
+    global: 'window',
+  },
   test: {
     globals: true,
     environment: 'jsdom',
