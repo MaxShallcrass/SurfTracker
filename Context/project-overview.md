@@ -39,6 +39,8 @@ User views surf session:
 
 - Able to save user inputted data about the surf session
 - Able to save data from external API's for wind, tide, and swell data
+- - Swell data from open met marine api https://marine-api.open-meteo.com/v1/marine?latitude=-33.798&longitude=151.2883&hourly=wave_height,wave_period,wave_direction,swell_wave_height,swell_wave_direction,swell_wave_period,wind_wave_height,wind_wave_direction,wind_wave_period,secondary_swell_wave_height,secondary_swell_wave_period,secondary_swell_wave_direction,sea_level_height_msl,sea_surface_temperature,ocean_current_velocity,ocean_current_direction&models=best_match&timezone=Australia%2FSydney&start_date=2026-06-01&end_date=2026-06-01
+- - Wind/weather data from open met api https://api.open-meteo.com/v1/forecast?latitude=-33.798&longitude=151.2883&hourly=temperature_2m,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m,uv_index,precipitation&models=best_match&timezone=Australia%2FSydney&start_date=2026-05-27&end_date=2026-06-01
 
 
 ### View a surf session
@@ -65,6 +67,10 @@ User views surf session:
 - Data stored through cloud RDS system
 - Building an easy to use application that a user can interact with
 
+
+## Front end features
+- Use https://gist.github.com/stellasphere/9490c195ed2b53c707087c8c2db4ec0c for displaying WMO weather codes on the front end
+
 ### Out of Scope
 
 - Storing data on device
@@ -76,3 +82,4 @@ User views surf session:
 3. A signed-in user can search/filter and view past surf sessions in a consolidated view
 4. Userfriendly design for the frontend
 5. Structure of the application is loosely coupled in a MVC design pattern with the frontend and backend easily swappable
+

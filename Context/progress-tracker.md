@@ -12,6 +12,19 @@ Signup / Login feature complete. Ready for next feature — surf session creatio
 
 ## Completed
 
+- **Database tables** (`context/feature-specs/02-database-structure.md`)
+
+  *Database*
+  - `Database/SurfSpots.sql`, `Database/Surfboards.sql`, `Database/SurfSessions.sql`,
+    `Database/SurfSessionUserObservations.sql`, `Database/SurfSessionSwell.sql`,
+    `Database/SurfSessionWeather.sql` — SQL schema files for all tables
+
+  *Backend*
+  - `SurfTrackerBackend/Models/Domain/` — domain models for all 6 new entities
+  - `SurfTrackerBackend/Data/Configurations/` — EF Core configuration class per entity
+  - `SurfTrackerBackend/Data/AppDbContext.cs` — DbSet properties added for all entities
+  - `SurfTrackerBackend/Migrations/20260616232611_AddDatabaseTables.cs` — EF migration generated
+
 - **Signup / Login** (`context/feature-specs/01-singup-login.md`)
 
   *Infrastructure*
@@ -59,9 +72,7 @@ Signup / Login feature complete. Ready for next feature — surf session creatio
 
 ## Next Up
 
-1. Define SQL Server schema (SurfSpots, SurfSessions) in `Database/` folder
-2. Create EF Core domain models and run migrations
-3. Implement surf session creation feature
+1. Implement surf session creation feature
 
 ## Open Questions
 
