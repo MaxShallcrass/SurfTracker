@@ -1,0 +1,25 @@
+CREATE TABLE SurfSessionSwell (
+    SurfSessionSwellId          INT          IDENTITY(1,1) NOT NULL,
+    SurfSessionId               INT                        NOT NULL,
+    [Time]                      DATETIME2                  NOT NULL,
+    WaveHeight                  DECIMAL(5,2)               NULL,
+    WavePeriod                  DECIMAL(5,2)               NULL,
+    WaveDirection               INT                        NULL,
+    SwellWaveHeight             DECIMAL(5,2)               NULL,
+    SwellWavePeriod             DECIMAL(5,2)               NULL,
+    SwellWaveDirection          INT                        NULL,
+    WindWaveHeight              DECIMAL(5,2)               NULL,
+    WindWavePeriod              DECIMAL(5,2)               NULL,
+    WindWaveDirection           INT                        NULL,
+    SecondarySwellWaveHeight    DECIMAL(5,2)               NULL,
+    SecondarySwellWavePeriod    DECIMAL(5,2)               NULL,
+    SecondarySwellWaveDirection INT                        NULL,
+    SeaLevelHeightMsl           DECIMAL(5,2)               NULL,
+    SeaSurfaceTemperature       DECIMAL(5,2)               NULL,
+    OceanCurrentVelocity        DECIMAL(5,2)               NULL,
+    OceanCurrentDirection       INT                        NULL,
+
+    CONSTRAINT PK_SurfSessionSwell             PRIMARY KEY (SurfSessionSwellId),
+    CONSTRAINT FK_SurfSessionSwell_SurfSessions FOREIGN KEY (SurfSessionId) REFERENCES SurfSessions (SurfSessionId),
+    CONSTRAINT UQ_SurfSessionSwell_SessionTime  UNIQUE      (SurfSessionId, [Time])
+);
